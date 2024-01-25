@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import loginUser from '../model/loginModel';
 import './css/Login.module.scss';
+import ErrorBox from '../components/common/ErrorBox';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('')
@@ -13,7 +14,10 @@ const LoginPage = () => {
     } else {
       setError('Username or password is incorrect');
     }
-  }
+  };
+  const handleCloseError = () => {
+    setError('');
+  };
 
   return (
     <div className="login-container">
@@ -31,7 +35,7 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handleLogin}>Login</button>
-        {error && <div className="error-message">{error}</div>}
+        {error && <ErrorBox message={error} onClose={handleCloseError} />}
       </div>
     </div>
   );
