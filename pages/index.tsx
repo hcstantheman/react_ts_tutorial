@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import loginUser from '../model/loginModel';
-import './css/Login.module.scss';
+import styles from './css/Login.module.scss';
 import ErrorBox from '../components/common/ErrorBox';
 
 const LoginPage = () => {
@@ -20,8 +20,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-form">
+    <div className={styles.loginContainer}>
+      <div className={styles.loginForm}>
         <input
           type="text"
           placeholder="Username"

@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/ErrorBox.module.scss';
+import styles from './css/ErrorBox.module.scss';
 
 type ErrorBoxProps = {
   message: string;
@@ -8,8 +8,8 @@ type ErrorBoxProps = {
 
 const ErrorBox: React.FC<ErrorBoxProps> = ({ message, onClose }) => {
   return (
-    <div className="error-box-backdrop">
-      <div className="error-box">
+    <div className={styles.container}>
+      <div className={styles.box}>
         <p>{message}</p>
         <button onClick={onClose}>Close</button>
       </div>
